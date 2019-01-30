@@ -24,11 +24,11 @@ const scrabbled = str
     .split('')
     .filter(char => char.match(/[a-z]/g))
     .map(char => `${argv.prefix}${char}${argv.suffix}`)
-    .join(' '))
+    .join(''))
   .join(` ${argv.blank} `);
 
 process.stdout.write(`${scrabbled}\n`);
 
 if (argv.copy) {
-  ncp.copy(scrabbled, () => process.stdout.write('Copied to clipboard'));
+  ncp.copy(scrabbled, () => process.stdout.write('Copied to clipboard\n'));
 }
